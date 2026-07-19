@@ -202,7 +202,7 @@ export default function StudentRegistration() {
                   <div className="border-l-4 border-primary-600 pl-6 py-1 mb-8 bg-surface-50 rounded-r-lg p-6">
                     <SelectInput
                       label="Department"
-                      placeholder="Select a department..."
+                      placeholder="Select department..."
                       options={programs}
                       value={formData.program}
                       onChange={handleChange('program')}
