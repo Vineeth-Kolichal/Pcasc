@@ -1,0 +1,90 @@
+[
+    {
+        "course": "BCOM",
+        "sub-course": [
+            "B.COM CA",
+            "B.COM FINANCE",
+            "B.COM COOPERATION",
+            "B.COM LOGISTICS"
+        ],
+        "minor1": [
+            "KU1DSCCOM101 - B COM - ACCOUNTING FOR BEGINNERS"
+        ],
+        "minor2": [
+            "KU1DSCCOM103 - BCOM - BUSINESS STATISTICS"
+        ]
+    },
+    {
+        "course": "BBA",
+        "sub-course": [
+            "BBA",
+            "BBA AH"
+        ],
+        "minor1": [
+            "KU1DSCBBA102 - BBA - BUSINESS STATISTICS"
+        ],
+        "minor2": [
+            "KU1DSCBBA103 - BBA - BUSINESS COMMUNICATION"
+        ]
+    },
+    {
+        "course": "BTTM",
+        "sub-course": [
+            "BTTM"
+        ]
+    },
+    {
+        "course": "BA HISTORY",
+        "sub-course": [
+            "BA HISTORY"
+        ]
+    },
+    {
+        "course": "BA MALAYALAM",
+        "sub-course": [
+            "BA MALAYALAM"
+        ]
+    },
+    {
+        "course": "BSC GEOGRAPHY",
+        "sub-course": [
+            "BSC GEOGRAPHY"
+        ],
+        "mdc": [
+            "KU1MDCGEO101 - GEOGRAPHY - INTRODUCTION TO GEOSYSTEMS - PLANET AND PEOPLE"
+        ],
+        "minor2": [
+            "KU1DSCGEL - GEOGRAPHY- UNDERSTANDING THE EARTH"
+        ]
+    },
+    {
+        "course": "BCA",
+        "sub-course": [
+            "BCA"
+        ],
+        "minor1": [
+            "KU1DSCCAP105 - BCA - FUNDAMENTALS OF WEB DEVELOPMENT"
+        ]
+    },
+    {
+        "course": "BSW",
+        "sub-course": [
+            "BSW"
+        ]
+    },
+    {
+        "course": "BSC PSYCHOLOGY",
+        "sub-course": [
+            "BSC PSYCHOLOGY"
+        ],
+        "minor1": [
+            "KU1DSCPSY101 - PSYCHOLOGY - SOCIAL BEHAVIOUR"
+        ]
+    },
+    {
+        "course": "Others",
+        "mdc": [
+            "KU1MDCFHI101 - HINDI - LAGHU KADHA"
+        ]
+    }
+]
