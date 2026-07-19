@@ -37,6 +37,9 @@
         "course": "BA HISTORY",
         "sub-course": [
             "BA HISTORY"
+        ],
+        "minor1": [
+            "KU1DSCECO103 : ECONOMIC'S OF TOURISM AND DEVELOPMENT"
         ]
     },
     {
@@ -77,7 +80,7 @@
         "sub-course": [
             "BSC PSYCHOLOGY"
         ],
-        "minor1": [
+        "minor2": [
             "KU1DSCPSY101 - PSYCHOLOGY - SOCIAL BEHAVIOUR"
         ]
     },
