@@ -17,6 +17,7 @@ export default function AdminLogin() {
   const handleLogin = (e) => {
     e.preventDefault()
     if (userId === 'admin' && password === 'Admin@123') {
+      sessionStorage.setItem('isAdminAuthenticated', 'true')
       navigate('/admin-page/dashboard')
     } else {
       alert('Invalid User ID or Password')
