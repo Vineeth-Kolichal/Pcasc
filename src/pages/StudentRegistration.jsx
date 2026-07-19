@@ -176,14 +176,14 @@ export default function StudentRegistration() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                     <FormInput
                       label="Full Name"
-                      placeholder="Enter your full legal name"
+                      placeholder="Enter your full name"
                       value={formData.fullName}
                       onChange={handleChange('fullName')}
                       id="fullName"
                     />
                     <FormInput
                       label="Phone Number"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="Enter your Phone number"
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange('phone')}
@@ -214,7 +214,7 @@ export default function StudentRegistration() {
                   {/* MDC / Minor Row */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                     <SelectInput
-                      label="MDC Paper Section"
+                      label="MDC Paper"
                       placeholder="Select Paper"
                       options={mdcPapers}
                       value={formData.mdcPaper}
@@ -222,7 +222,7 @@ export default function StudentRegistration() {
                       id="mdcPaper"
                     />
                     <SelectInput
-                      label="Minor 1 Selection"
+                      label="Minor 1"
                       placeholder="Choose Minor 1"
                       options={minor1Options}
                       value={formData.minor1}
@@ -230,7 +230,7 @@ export default function StudentRegistration() {
                       id="minor1"
                     />
                     <SelectInput
-                      label="Minor 2 Selection"
+                      label="Minor 2"
                       placeholder="Choose Minor 2"
                       options={minor2Options}
                       value={formData.minor2}

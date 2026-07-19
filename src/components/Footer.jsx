@@ -14,17 +14,7 @@ export function StudentFooter() {
             <img src={logoImg} alt="PCASC Logo" className="w-7 h-7 rounded-full object-cover" />
             <span className="text-sm font-bold text-primary-900">PCASC Munnad</span>
           </div>
-          <span className="text-xs text-slate-400 font-mono">
-            made with ❤️ by{' '}
-            <a
-              href="https://www.instagram.com/vineeth_narayani_chandran/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 transition-colors"
-            >
-              Vineeth Chandran
-            </a>
-          </span>
+          <span className="text-xs text-slate-400 font-mono">© 2024 Peoples Co-Operative Arts & Science College, Munnad</span>
         </div>
       </div>
     </footer>
