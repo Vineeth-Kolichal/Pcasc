@@ -126,8 +126,7 @@ export default function StudentRegistration() {
                   Academic<br />Registration
                 </h1>
                 <p className="text-sm text-slate-500 leading-relaxed mb-8">
-                  Complete your semester enrollment. Please ensure all student information
-                  matches your institutional records to avoid processing delays.
+                  Complete your MDC and Minor course registration. Please verify your subject selections carefully before submission to avoid any academic discrepancies.
                 </p>
 
                 {/* Info Badges */}
