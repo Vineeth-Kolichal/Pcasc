@@ -140,14 +140,6 @@ export default function StudentRegistration() {
                       Prerequisites are automatically validated upon submission.
                     </p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Clock className="w-4 h-4 text-primary-600" />
-                    </div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      Enrollment window closes Friday, Sep 15th at 5:00 PM.
-                    </p>
-                  </div>
                 </div>
               </Card>
 
@@ -251,10 +243,7 @@ export default function StudentRegistration() {
                   <div className="border-t border-surface-200 my-6"></div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center justify-between">
-                    <Button variant="ghost" icon={X} onClick={handleCancel}>
-                      Cancel Application
-                    </Button>
+                  <div className="flex items-center justify-end">
                     <Button
                       variant="primary"
                       iconRight={ArrowRight}
