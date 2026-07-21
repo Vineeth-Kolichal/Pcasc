@@ -45,19 +45,11 @@ export default function StudentRegistration() {
     }
   }
 
-  const selectedCourseGroup = dropdownData.find(item => (item['sub-course'] || []).includes(formData.program))?.course
+  const mdcPapers = dropdownData.flatMap(item => item.mdc || [])
 
-  const mdcPapers = dropdownData
-    .filter(item => item.course !== selectedCourseGroup)
-    .flatMap(item => item.mdc || [])
+  const minor1Options = dropdownData.flatMap(item => item.minor1 || [])
 
-  const minor1Options = dropdownData
-    .filter(item => item.course !== selectedCourseGroup)
-    .flatMap(item => item.minor1 || [])
-
-  const minor2Options = dropdownData
-    .filter(item => item.course !== selectedCourseGroup)
-    .flatMap(item => item.minor2 || [])
+  const minor2Options = dropdownData.flatMap(item => item.minor2 || [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
