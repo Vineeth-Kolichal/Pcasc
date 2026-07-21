@@ -11,28 +11,55 @@ import { db } from '../firebase'
 import { collection, query, where, getDocs } from 'firebase/firestore'
 import XLSX from 'xlsx-js-style'
 
-const courseOptions = [
-  'All Courses',
-  ...dropdownData.flatMap((item) => item['sub-course'] || []),
-]
+const categories = ['MDC', 'Minor 1', 'Minor 2']
+
+const mdcOptions = Array.from(
+  new Set(dropdownData.flatMap((item) => item.mdc || []))
+)
+const minor1Options = Array.from(
+  new Set(dropdownData.flatMap((item) => item.minor1 || []))
+)
+const minor2Options = Array.from(
+  new Set(dropdownData.flatMap((item) => item.minor2 || []))
+)
+
+const categoryFieldMap = {
+  MDC: 'mdcPaper',
+  'Minor 1': 'minor1',
+  'Minor 2': 'minor2',
+}
 
 export default function AdminDashboard() {
-  const [selectedCourse, setSelectedCourse] = useState('All Courses')
+  const [selectedCategory, setSelectedCategory] = useState('MDC')
+  const [selectedSubject, setSelectedSubject] = useState('')
   const [isExporting, setIsExporting] = useState(false)
 
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value)
+    setSelectedSubject('')
+  }
+
+  const getSubjectOptions = () => {
+    if (selectedCategory === 'MDC') return mdcOptions
+    if (selectedCategory === 'Minor 1') return minor1Options
+    if (selectedCategory === 'Minor 2') return minor2Options
+    return []
+  }
+
   const handleExport = async () => {
+    if (!selectedSubject) {
+      alert('Please select a subject first.')
+      return
+    }
     setIsExporting(true)
     try {
       const studentsRef = collection(db, 'students')
-      let q = query(studentsRef)
-
-      if (selectedCourse !== 'All Courses') {
-        q = query(studentsRef, where('program', '==', selectedCourse))
-      }
+      const field = categoryFieldMap[selectedCategory]
+      const q = query(studentsRef, where(field, '==', selectedSubject))
 
       const querySnapshot = await getDocs(q)
       if (querySnapshot.empty) {
-        alert('No registered students found for the selected course.')
+        alert('No registered students found for the selected subject.')
         setIsExporting(false)
         return
       }
@@ -73,9 +100,11 @@ export default function AdminDashboard() {
 
       const workbook = XLSX.utils.book_new()
       XLSX.utils.book_append_sheet(workbook, worksheet, 'Students')
+      const safeSubject = selectedSubject.replace(/\s+/g, '_')
+      const safeCategory = selectedCategory.replace(/\s+/g, '_')
       XLSX.writeFile(
         workbook,
-        `student_course_selections_${selectedCourse.replace(/\s+/g, '_')}.xlsx`
+        `student_selections_${safeCategory.toLowerCase()}_${safeSubject}.xlsx`
       )
     } catch (error) {
       console.error('Export failed:', error)
@@ -112,15 +141,23 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Course Selection */}
-        <div className="mb-6">
+        {/* Category & Subject Selection */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <SelectInput
-            label="Course Selection"
-            placeholder="All Courses"
-            options={courseOptions}
-            value={selectedCourse}
-            onChange={(e) => setSelectedCourse(e.target.value)}
-            id="courseExport"
+            label="Category Selection"
+            placeholder="Select Category"
+            options={categories}
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            id="categoryExport"
+          />
+          <SelectInput
+            label="Subject Selection"
+            placeholder="Select Subject"
+            options={getSubjectOptions()}
+            value={selectedSubject}
+            onChange={(e) => setSelectedSubject(e.target.value)}
+            id="subjectExport"
           />
         </div>
 
